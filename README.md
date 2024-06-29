@@ -1,44 +1,28 @@
-    <header>
-        <h1>Simple Cross-Chain Staking Program</h1>
-    </header>
+# Simple Cross-Chain Staking Program
+- this is a very simplified example of a cross-chain staking program where users are able to stake on chainA/chainB using an Endpoint contract.
+- Endpoint contract emits a "MessageSent" which is catched by offchain event listeners
+- After catching the event, event listener will initiate a transaction on the other side of the bridge.
+- "receiveMessage" function on Endpoint on the other side of the bridge with "MessageSent" event parameters,
+- Target contract on the other chain must implement "IMessageReceiver" interface so that it can be called from endpoint.
 
-    <div class="section">
-        <h2>Overview</h2>
-        <p>This is a simplified example of a cross-chain staking program. Users can stake on another chain using an Endpoint contract. The process works as follows:</p>
-        <ul>
-            <li>The Endpoint contract emits a <code>MessageSent</code> event, which is caught by off-chain event listeners.</li>
-            <li>After catching the event, the event listener initiates a transaction on the other side of the bridge.</li>
-            <li>The Endpoint on the other part of the bridge is called with the <code>MessageSent</code> parameters.</li>
-            <li>The target contract on the other chain must implement the <code>IMessageReceiver</code> interface to be callable from the endpoint.</li>
-        </ul>
-    </div>
+# How to run?
+- Deploy chains:
+`sh setup.sh`
+this command will run two seperate local chains with chain Ids of 31337 (chainA) and 31336 (chainB)
 
-    <div class="section">
-        <h2>How to Run</h2>
-        <p>Follow these steps to set up and run the program:</p>
-        <ul>
-            <li><strong>Deploy chains:</strong><br>
-                <code>sh setup.sh</code><br>
-                This command will start two separate local chains with IDs 31337 (chainA) and 31336 (chainB).
-            </li>
-            <li><strong>Deploy contracts:</strong><br>
-                <code>yarn deploy</code><br>
-                This will deploy the endpoint and staking contracts on both chains.
-            </li>
-            <li><strong>Run event listener:</strong><br>
-                <code>yarn listen</code><br>
-                This command will start the event listeners.
-            </li>
-            <li><strong>Stake on chainB from chainA:</strong><br>
-                <code>yarn AB</code>
-            </li>
-            <li><strong>Stake on chainA from chainB:</strong><br>
-                <code>yarn BA</code>
-            </li>
-        </ul>
-    </div>
+- Deploy contracts:
+`yarn deploy` to deploy endpoint and staking contracts on both chains
 
-    <div class="section warning">
-        <h2>Warning!</h2>
-        <p>This is a highly simplified example of a cross-chain staking program meant to demonstrate how such programs work in practice. The development of this program took approximately 45 minutes and it is not ready for production use.</p>
-    </div>
+- Run event listener:
+`yarn listen` to deploy run event listeners
+
+- Stake on chainB from chainA:
+`yarn AB`
+
+- Stake on chainA from chainB:
+`yarn BA`
+
+
+# WARNING!
+this is a very simplified example of a cross-chain staking program to only show how this programs, writting this program only took me like 45 minutes, its not ready to be used in production!
+
