@@ -1,4 +1,3 @@
-<body>
     <header>
         <h1>Simple Cross-Chain Staking Program</h1>
     </header>
@@ -43,4 +42,3 @@
         <h2>Warning!</h2>
         <p>This is a highly simplified example of a cross-chain staking program meant to demonstrate how such programs work in practice. The development of this program took approximately 45 minutes and it is not ready for production use.</p>
     </div>
-</body>
