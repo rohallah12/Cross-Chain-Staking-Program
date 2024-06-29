@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "ethers": "^6.13.1",
+    "hardhat": "^2.22.5"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.7",
+    "@nomicfoundation/hardhat-ethers": "^3.0.6",
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.5",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.11",
+    "@nomicfoundation/hardhat-verify": "^2.0.8",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.16",
+    "@types/mocha": "^10.0.7",
+    "chai": "^4.4.1",
+    "hardhat-gas-reporter": "^1.0.10",
+    "solidity-coverage": "^0.8.12",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.5.2"
+  },
+  "scripts": {
+    "deploy": "yarn hardhat run scripts/deploy.js",
+    "listen": "yarn hardhat run scripts/listen.js",
+    "AB": "yarn hardhat run scripts/stakeInChainBFromA.js",
+    "BA": "yarn hardhat run scripts/stakeInChainAFromB.js"
+  }
+}
